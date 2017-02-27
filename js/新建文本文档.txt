@@ -1,0 +1,44 @@
+window.onload=function(){
+	var tpyyxw=document.getElementById('tpyyxw');
+	var menulist=document.getElementsByClassName('menu-list')[0];
+	var nbIfo=docuemnt.getElementsByClassName('nb-info')[0];
+	var nbInfochild1=removeTextNode(nbInfo)[0];
+	addEvent(tpyyxw,'mouseover',function(){
+		menulist.style.display='block';
+	})
+	addEvent(tpyyxw,'mouseout',function(){
+		menulist.style.display='none';
+	})
+	addEvent(menulist,'mouseover',function(){
+		menulist.style.display='block';
+	})
+	addEvent(menulist,'mouseout',function(){
+		menulist.style.display='none';
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function addEvent(obj,type,fn){
+	if(obj.addEventListener){
+		obj.addEventListener(type,fn,false);
+	}else if(obj.attachEvent){
+		obj.attachEvent('on'+type,fn);
+	}
+}
+function removeEvent(obj,type,fn){
+	if(obj.removeEventListener){
+		obj.removeEventListener(type,fn,false);
+	}else if(obj.detachEvent){
+		obj.detachEvent('on'+type,fn);
+	}
+}
